@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -19,6 +20,6 @@ public class Cliente {
     @Column(nullable = false, length = 11)
     private String cpf;
 
-    @Column
+    @Column(name = "data_cadastro")
     private LocalDate dataCadastro;
 }
