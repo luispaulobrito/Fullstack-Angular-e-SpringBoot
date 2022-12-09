@@ -30,7 +30,7 @@ public class ClienteController {
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Cliente deletar( @PathVariable Integer id ){
+    public void deletar( @PathVariable Integer id ){
         repository
                 .findById(id)
                 .map( cliente -> {
@@ -38,8 +38,18 @@ public class ClienteController {
                     return Void.TYPE;
                 })
                 .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        return null;
     }
 
-    
+    @PutMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void atualizar( @PathVariable Integer id, @RequestBody Cliente clienteAtualizado){
+        repository
+                .findById(id)
+                .map( cliente -> {
+                    cliente.setNome(clienteAtualizado.getNome());
+                    cliente.setCpf(clienteAtualizado.getCpf());
+                    return repository.save(cliente);
+                })
+                .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
 }
