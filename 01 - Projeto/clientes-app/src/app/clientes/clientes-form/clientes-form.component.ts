@@ -8,4 +8,14 @@ import { Cliente } from '../cliente';
 })
 export class ClientesFormComponent {
   cliente: Cliente;
+
+  constructor(){
+    this.cliente = new Cliente();
+  }
+  ngOnInit() : void{
+  }
+
+  clicar(){
+    console.log(this.cliente);
+  }
 }
