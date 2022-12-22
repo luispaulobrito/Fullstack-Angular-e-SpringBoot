@@ -1,3 +1,4 @@
+import { ClientesService } from './clientes.service';
 import { ClientesModule } from './clientes/clientes.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,9 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     ClientesModule
   ],
-  providers: [],
+  providers: [
+    ClientesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

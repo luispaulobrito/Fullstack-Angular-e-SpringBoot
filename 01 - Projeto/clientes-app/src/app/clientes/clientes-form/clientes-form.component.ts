@@ -1,3 +1,4 @@
+import { ClientesService } from './../../clientes.service';
 import { Component } from '@angular/core';
 import { Cliente } from '../cliente';
 
@@ -9,8 +10,8 @@ import { Cliente } from '../cliente';
 export class ClientesFormComponent {
   cliente: Cliente;
 
-  constructor(){
-    this.cliente = new Cliente();
+  constructor( private service: ClientesService){
+    this.cliente = service.getCliente();
   }
   ngOnInit() : void{
   }
