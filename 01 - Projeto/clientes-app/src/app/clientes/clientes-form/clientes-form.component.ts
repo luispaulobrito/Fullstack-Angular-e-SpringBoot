@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ClientesService } from './../../clientes.service';
 import { Component } from '@angular/core';
 import { Cliente } from '../cliente';
@@ -12,8 +13,11 @@ export class ClientesFormComponent {
   success: boolean = false;
   errors: string[] | null
 
-  constructor( private service: ClientesService){
-    this.cliente = new Cliente;
+  constructor(
+    private service: ClientesService,
+    private router : Router
+    ){
+  this.cliente = new Cliente;
   }
   ngOnInit() : void{
   }
@@ -31,5 +35,9 @@ export class ClientesFormComponent {
           this.errors = errorResponse.error.errors;
         }
       );
+  }
+
+  voltarParaListagem(){
+    this.router.navigate(['/clientes-lista'])
   }
 }
