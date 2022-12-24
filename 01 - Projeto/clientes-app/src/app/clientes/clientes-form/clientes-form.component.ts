@@ -1,7 +1,8 @@
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ClientesService } from './../../clientes.service';
 import { Component } from '@angular/core';
 import { Cliente } from '../cliente';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-clientes-form',
@@ -11,15 +12,29 @@ import { Cliente } from '../cliente';
 export class ClientesFormComponent {
   cliente: Cliente;
   success: boolean = false;
-  errors: string[] | null
+  errors: string[] | null;
+  id: number;
 
   constructor(
     private service: ClientesService,
-    private router : Router
+    private router : Router,
+    private activatedRoute : ActivatedRoute
     ){
   this.cliente = new Cliente;
   }
+
   ngOnInit() : void{
+    let params : Observable<Params> = this.activatedRoute.params
+    params.subscribe( urlParams => {
+      this.id = urlParams['id'];
+      if (this.id) {
+        this.service
+          .getClienteById(this.id)
+          .subscribe( response => this.cliente = response,
+            errorResponse => this.cliente = new Cliente()
+          )
+      }
+    })
   }
 
   onSubmit(){
