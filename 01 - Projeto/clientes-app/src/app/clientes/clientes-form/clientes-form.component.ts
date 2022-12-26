@@ -38,7 +38,17 @@ export class ClientesFormComponent {
   }
 
   onSubmit(){
-    this.service
+    if (this.id) {
+      this.service
+        .atualizar(this.cliente)
+        .subscribe( reponse => {
+          this.success = true;
+          this.errors = null;
+        }, errorResponse => {
+          this.errors = ['Erro ao atualizar o cliente.']
+        })
+    } else {
+      this.service
       .salvar(this.cliente)
       .subscribe( response =>
         {
@@ -49,7 +59,8 @@ export class ClientesFormComponent {
           this.success = false;
           this.errors = errorResponse.error.errors;
         }
-      );
+        );
+      }
   }
 
   voltarParaListagem(){
