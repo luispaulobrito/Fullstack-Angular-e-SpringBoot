@@ -1,5 +1,6 @@
 package io.github.luispaulobrito.clientes.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,7 +15,7 @@ public class ServicoPrestado {
     private Integer id;
 
     @Column(nullable = false, length = 150)
-    private String descicao;
+    private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
@@ -24,5 +25,6 @@ public class ServicoPrestado {
     private BigDecimal valor;
 
     @Column
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate data;
 }
