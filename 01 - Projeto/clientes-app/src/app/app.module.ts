@@ -1,3 +1,4 @@
+import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 import { ClientesService } from './clientes.service';
 import { ClientesModule } from './clientes/clientes.module';
 
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     TemplateModule,
     AppRoutingModule,
-    ClientesModule
+    ClientesModule,
+    ServicoPrestadoModule
   ],
   providers: [
     ClientesService
