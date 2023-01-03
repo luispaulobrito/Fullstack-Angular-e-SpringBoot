@@ -6,6 +6,7 @@ import io.github.luispaulobrito.clientes.model.repository.ClienteRepository;
 import io.github.luispaulobrito.clientes.model.repository.ServicoPrestadoRepository;
 import io.github.luispaulobrito.clientes.rest.dto.ServicoPrestadoDTO;
 import io.github.luispaulobrito.clientes.util.BigDecimalConverter;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class ServicoPrestadoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ServicoPrestado salvar(@RequestBody ServicoPrestadoDTO dto){
+    public ServicoPrestado salvar(@RequestBody @Valid ServicoPrestadoDTO dto){
         LocalDate data = LocalDate.parse(dto.getData(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         Integer idCliente = dto.getIdCliente();
 

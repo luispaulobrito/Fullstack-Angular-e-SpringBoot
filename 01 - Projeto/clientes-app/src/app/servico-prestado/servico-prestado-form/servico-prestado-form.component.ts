@@ -31,9 +31,16 @@ export class ServicoPrestadoFormComponent implements OnInit {
 
   onSubmit(){
     this.service
-      .salvar(this.servico)
-      .subscribe( response => {
-        console.log(response);
-      })
+    .salvar(this.servico)
+    .subscribe( response =>
+      {
+        this.success = true;
+        this.errors = null;
+        this.servico = new ServicoPrestado();
+      }, errorResponse => {
+        this.success = false;
+        this.errors = errorResponse.error.errors;
+      }
+      );
   }
 }
