@@ -1,7 +1,8 @@
+import { ServicoPrestadoBusca } from './servico-prestado/servico-prestado-lista/servicoPrestadoBusca';
 import { environment } from './../environments/environment';
 import { Observable } from 'rxjs';
 import { ServicoPrestado } from './servico-prestado/servicoPrestado';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -15,6 +16,16 @@ export class ServicoPrestadoService {
 
   salvar(servicoPrestado: ServicoPrestado) : Observable<ServicoPrestado>{
     return this.http.post<ServicoPrestado>(this.apiURL, servicoPrestado);
+  }
+
+  buscar(nome:string, mes:number) : Observable<ServicoPrestadoBusca[]>{
+    const httpParams = new HttpParams()
+      .set("nome", nome)
+      .set("mes", mes ? mes.toString() : '');
+
+    const url = this.apiURL + "?" + httpParams.toString();
+    console.log(url);
+    return this.http.get<any>(url);
   }
 
 }
