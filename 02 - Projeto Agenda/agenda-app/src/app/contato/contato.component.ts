@@ -12,6 +12,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContatoComponent implements OnInit {
 
   formulario: FormGroup;
+  contatos: Contato[] = [];
+  colunas = ['id', 'nome', 'email', 'favorito']
 
   constructor(
     private service : ContatoService,
@@ -21,22 +23,30 @@ export class ContatoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.montarFormulario();
+    this.listarContatos();
+  }
+
+  montarFormulario(){
     this.formulario = this.fb.group({
       nome : ['', Validators.required],
       email : ['', [Validators.email, Validators.required]]
     })
   }
 
+  listarContatos(){
+    this.service.list().subscribe(response => {
+      this.contatos = response;
+    })
+  }
+
   submit(){
-    const erroNomeRequired = this.formulario.controls['nome'].errors && this.formulario.controls['nome'].errors['required'];
+    const formValues = this.formulario.value
+    const contato : Contato = new Contato(formValues.nome, formValues.email)
+    this.service.save(contato).subscribe(resposta => {
+      this.contatos.push(resposta);
+      console.log(this.contatos);
 
-    const erroEmailInvalido = this.formulario.controls['email'].errors && this.formulario.controls['email'].errors['email'];
-    
-    console.log('erroNomeRequired : ', erroNomeRequired);
-    console.log('erroEmailInvalido : ', erroEmailInvalido);
-
-    // this.service.save(c).subscribe(resposta => {
-    //   console.log(resposta);
-    // })
+    })
   }
 }

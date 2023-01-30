@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.half-width{
+  width: 50%;
+}
+
 .toolbar{
   background-color: rgb(3, 45, 85);
   color: aliceblue;
