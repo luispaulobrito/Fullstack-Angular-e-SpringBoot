@@ -2,6 +2,8 @@ import { ContatoService } from './../contato.service';
 import { Component, OnInit } from '@angular/core';
 import { Contato } from './contato';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ContatoDetalheComponent } from '../contato-detalhe/contato-detalhe.component';
 
 @Component({
   selector: 'app-contato',
@@ -17,7 +19,8 @@ export class ContatoComponent implements OnInit {
 
   constructor(
     private service : ContatoService,
-    private fb : FormBuilder
+    private fb : FormBuilder,
+    private dialog : MatDialog
   ){
     this.formulario = this.fb.group({});
   }
@@ -65,5 +68,13 @@ export class ContatoComponent implements OnInit {
             .upload(contato, formData)
             .subscribe( response => this.listarContatos());
     }
+  }
+
+  visualizarContato( contato : Contato ){
+    this.dialog.open( ContatoDetalheComponent, {
+      width: '450px',
+      height: '450px',
+      data: contato
+    })
   }
 }

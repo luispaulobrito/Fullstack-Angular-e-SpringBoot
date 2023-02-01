@@ -11,15 +11,18 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContatoComponent } from './contato/contato.component';
+import { ContatoDetalheComponent } from './contato-detalhe/contato-detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContatoComponent,
+    ContatoDetalheComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { ContatoComponent } from './contato/contato.component';
     MatTabsModule,
     MatTableModule,
     MatCardModule,
+    MatDialogModule,
     BrowserAnimationsModule
   ],
   providers: [
