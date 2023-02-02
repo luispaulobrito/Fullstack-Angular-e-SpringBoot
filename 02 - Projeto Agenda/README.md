@@ -8,12 +8,11 @@ Nesse projeto foi aprendido como desenvolver uma RestFUL API com Spring Boot e c
 
 ## Layout 
 
-![Web 1](https://github.com/luispaulobrito/Projeto-Clientes-e-Servicos-Prestados/blob/main/assets/api.gif)
+![Web 1](https://github.com/luispaulobrito/https://github.com/luispaulobrito/Fullstack-Angular-e-SpringBoot/tree/main/02%20-%20Projeto%20Agenda/blob/main/assets/api-agenda.gif)
 
 # Tecnologias utilizadas
 ## Front end
 - Angular
-- Bootstrap
 - Typescript
 
 ## Back end
@@ -21,7 +20,7 @@ Nesse projeto foi aprendido como desenvolver uma RestFUL API com Spring Boot e c
 - Spring Boot
 
 ## Banco de Dados
-- H2
+- PostgreSQL
 
 # Autor
 
