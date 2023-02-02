@@ -8,7 +8,7 @@ Nesse projeto foi aprendido como desenvolver uma RestFUL API com Spring Boot e c
 
 ## Layout 
 
-![Web 1](https://github.com/luispaulobrito/https://github.com/luispaulobrito/Fullstack-Angular-e-SpringBoot/tree/main/02%20-%20Projeto%20Agenda/blob/main/assets/api-agenda.gif)
+![Web 1](https://github.com/luispaulobrito/Fullstack-Angular-e-SpringBoot/blob/main/02%20-%20Projeto%20Agenda/assets/api-agenda.gif)
 
 # Tecnologias utilizadas
 ## Front end
