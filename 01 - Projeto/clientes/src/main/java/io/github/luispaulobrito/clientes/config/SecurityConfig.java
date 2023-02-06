@@ -7,8 +7,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 @EnableWebSecurity
-@EnableResourceServer
-@EnableAuthorizationServer
 public class SecurityConfig implements WebSecurityConfigurer {
     @Override
     public void init(SecurityBuilder builder) throws Exception {
