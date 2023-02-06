@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/luispaulobrito/Santander_FullStack_Developer/blob/main/Logo-Santander-Bootcamp.png" width="175px"> 
+<img src="https://github.com/luispaulobrito/Fullstack-Angular-e-SpringBoot/blob/main/05%20-%20assets/default-meta-image-v2.png" width="175px"> 
 </div>
 <h1 align="center">Angular 9 + Spring Boot 2.2: Fullstack Completo e Atualizado</h1>
 <h4 align="center">O Curso Angular 9 + Spring Boot 2.2: Fullstack Completo e Atualizado ensina sobre arquitetura de aplicações web e como integrar tecnologias para obter um site completo ou aplicações corporativas de grande escala.</h4>
@@ -27,4 +27,4 @@
 
 
 ## Conclusão do Bootcamp: 03/02/2023
-![Certificado de Conclusão](https://github.com/luispaulobrito/Santander_FullStack_Developer/blob/main/certificado-bootcamp-santander.jpg)
+![Certificado de Conclusão](https://github.com/luispaulobrito/Fullstack-Angular-e-SpringBoot/blob/main/05%20-%20assets/certificado/UC-907b1188-6f2d-4ead-8085-315d3aecf4af.jpg)
